@@ -24,11 +24,21 @@ def add_user():
   return 'Adding user', 201
 
 
-
+# to save the user session in order to get the user image?
 @main.route('/saved_images')
 def saved_images():
 
+  image_list = Image.query.all()
   images = []
+
+  for image in image_list:
+    images.append({
+      'words': image.words,
+      'translatedWords': image.translatedWords,
+      'photo_url': image.photo_url,
+      'favorite': image.favorite,
+      'user_id': image.user_id
+      })
 
   return jsonify({"images": images})
 
