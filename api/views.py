@@ -23,9 +23,30 @@ def add_user():
 
   return 'Adding user', 201
 
+
+
 @main.route('/saved_images')
 def saved_images():
 
   images = []
 
   return jsonify({"images": images})
+
+# should be nested routes? or save user in session ?
+# example for nested route - "/api/movies/<int:movie_id>/cast_members" 
+@main.route('/add_image')
+def add_image():
+  image_data = request.get_json()
+
+  new_image = Image(
+    words=image_data['words'],
+    translatedWords=image_data['translatedWords'],
+    photo_url=image_data['photo_url'],
+    favorite=image_data['favorite'],
+    user_id=image_data['user_id'] # should be pass as params
+  )
+
+  db.session.add(new_image)
+  db.session.commit()
+
+  return 'Adding image', 201
