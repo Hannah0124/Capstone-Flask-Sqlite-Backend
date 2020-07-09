@@ -20,3 +20,4 @@ class User(db.Model):
 
 # one to many relationship
 # https://flask-sqlalchemy.palletsprojects.com/en/2.x/models/
+
