@@ -1,4 +1,4 @@
-from flask import Blueprint
+from flask import Blueprint, jsonify
 
 main = Blueprint('main', __name__)
 
@@ -6,3 +6,10 @@ main = Blueprint('main', __name__)
 def add_user():
 
   return 'Adding user', 201
+
+@main.route('/saved_images')
+def saved_images():
+
+  images = []
+
+  return jsonify({"images": images})
