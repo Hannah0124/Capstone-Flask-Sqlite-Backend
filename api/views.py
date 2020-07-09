@@ -11,7 +11,7 @@ def add_image():
   image_data = request.get_json()
 
   # create new image object
-  new_image = Image(image_uri=image_data['image_uri'], text=image_data['text'], translated_text=image_data['translated_text'])
+  new_image = Image(image_url=image_data['image_url'], text=image_data['text'], translated_text=image_data['translated_text'], favorite=image_data['favorite'])
   
   db.session.add(new_image)
   db.session.commit()
@@ -28,9 +28,10 @@ def images():
 
   for image in image_list:
     images.append({ 
-      'image_uri': image.image_uri, 
+      'image_url': image.image_url, 
       'text': image.text, 
-      'translated_text': image.translated_text 
+      'translated_text': image.translated_text,
+      'favorite': image.favorite 
     })
 
   return jsonify({'images' : images})
