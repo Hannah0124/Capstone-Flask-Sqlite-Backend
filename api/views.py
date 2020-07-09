@@ -43,7 +43,7 @@ def add_image():
     translatedWords=image_data['translatedWords'],
     photo_url=image_data['photo_url'],
     favorite=image_data['favorite'],
-    user_id=image_data['user_id'] # should be pass as params
+    user_id=image_data['user_id'] # should be pass as params?
   )
 
   db.session.add(new_image)

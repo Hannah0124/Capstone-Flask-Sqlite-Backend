@@ -12,6 +12,6 @@ class Image(db.Model):
   words = db.Column(db.String)
   translatedWords = db.Column(db.String)
   photo_url = db.Column(db.String)
-  favorite = db.Column(db.Boolean) #default - false
+  favorite = db.Column(db.Boolean, default=False) #default - false? 
   user_id = db.Column(db.Integer, db.ForeignKey('user.id'),
         nullable=False)
