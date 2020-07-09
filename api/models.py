@@ -6,6 +6,7 @@ class User(db.Model):
   provider = db.Column(db.String) #default - Google?
   username = db.Column(db.String)
   email = db.Column(db.String)
+  image = db.relationship('Image', backref='user', lazy=True )
 
 class Image(db.Model):
   id = db.Column(db.Integer, primary_key=True)
