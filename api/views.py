@@ -24,8 +24,13 @@ def add_image():
   db.session.add(new_image)
   db.session.commit()
 
+  response = {
+    'status': 'success',
+    'result': 'Successfully added an image'
+  }
 
-  return 'Done', 201  # success
+  return jsonify(response), 201  # success
+
 
 # endpoint
 @main.route('/images')
@@ -65,4 +70,13 @@ def add_user():
   db.session.commit()
 
 
-  return 'Done', 201  # success
+  response = {
+    'status': 'success',
+    'result': 'Successfully added a user'
+  }
+
+  return jsonify(response), 201  # success
+
+
+
+# jsonify: https://stackoverflow.com/questions/13081532/return-json-response-from-flask-view
