@@ -63,7 +63,8 @@ def add_user():
     uid=user_data['uid'], 
     provider=user_data['provider'], 
     username=user_data['username'], 
-    email=user_data['email']
+    email=user_data['email'],
+    password=user_data['password']
   )
   
   db.session.add(new_user)
@@ -78,5 +79,22 @@ def add_user():
   return jsonify(response), 201  # success
 
 
+# endpoint (TEST: need to delete later)
+@main.route('/users')
+
+def users():
+  user_list = User.query.all()
+  users = []
+
+  for user in user_list:
+    users.append({ 
+      'uid': user.uid,
+      'provider': user.provider,
+      'username': user.username,
+      'email': user.email,
+      'password': user.password
+    })
+
+  return jsonify({'users' : users})
 
 # jsonify: https://stackoverflow.com/questions/13081532/return-json-response-from-flask-view
