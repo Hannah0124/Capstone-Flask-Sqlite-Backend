@@ -2,7 +2,7 @@ from flask import Flask
 from os import environ
 from flask_sqlalchemy import SQLAlchemy
 
-from .commands import create_users, create_database
+from .commands import create_users, create_images, create_database
 from .extensions import db, guard
 from .models import User
 from .routes import api
@@ -28,6 +28,7 @@ def create_app():
   guard.init_app(app, User)
 
   app.cli.add_command(create_users)
+  app.cli.add_command(create_images)
   app.cli.add_command(create_database)
 
   app.register_blueprint(api)
