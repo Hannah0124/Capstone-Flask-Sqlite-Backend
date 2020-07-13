@@ -52,6 +52,28 @@ def images():
   return jsonify({'images' : images})
 
 
+
+# endpoint
+@main.route('/image/<id>', methods=['POST'])
+
+def delete_image(id):
+  # image_data = request.get_json(id)
+
+  # image_data = Data.query.get(id)
+
+  image_data = Image.query.get(id)
+
+  db.session.delete(image_data)
+  db.session.commit()
+
+  response = {
+    'status': 'success',
+    'result': 'Successfully deleted the image'
+  }
+
+  return jsonify(response), 201  # success
+
+
 # endpoint
 @main.route('/add_user', methods=['POST'])
 
