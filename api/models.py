@@ -3,7 +3,7 @@ from .extensions import db
 
 class Image(db.Model):
   id = db.Column(db.Integer, primary_key=True)
-  image_url = db.Column(db.String, unique=True)
+  image_url = db.Column(db.String)
   text = db.Column(db.String, unique=True, nullable=False)
   translated_text = db.Column(db.Integer, unique=True, nullable=False)
   favorite = db.Column(db.Boolean, default=False)
