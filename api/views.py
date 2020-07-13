@@ -41,6 +41,7 @@ def images():
 
   for image in image_list:
     images.append({ 
+      'id': image.id,
       'image_url': image.image_url, 
       'text': image.text, 
       'translated_text': image.translated_text,
@@ -110,6 +111,7 @@ def users():
 
   for user in user_list:
     users.append({ 
+      'id': user.id,
       'uid': user.uid,
       'provider': user.provider,
       'username': user.username,
@@ -120,3 +122,5 @@ def users():
   return jsonify({'users' : users})
 
 # jsonify: https://stackoverflow.com/questions/13081532/return-json-response-from-flask-view
+
+# delete-route: https://medium.com/python-pandemonium/build-simple-restful-api-with-python-and-flask-part-2-724ebf04d12
