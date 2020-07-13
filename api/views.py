@@ -41,6 +41,7 @@ def images():
 
   for image in image_list:
     images.append({ 
+      'id': image.id,
       'image_url': image.image_url, 
       'text': image.text, 
       'translated_text': image.translated_text,
@@ -50,6 +51,28 @@ def images():
     })
 
   return jsonify({'images' : images})
+
+
+
+# endpoint
+@main.route('/image/<id>', methods=['POST'])
+
+def delete_image(id):
+  # image_data = request.get_json(id)
+
+  # image_data = Data.query.get(id)
+
+  image_data = Image.query.get(id)
+
+  db.session.delete(image_data)
+  db.session.commit()
+
+  response = {
+    'status': 'success',
+    'result': 'Successfully deleted the image'
+  }
+
+  return jsonify(response), 201  # success
 
 
 # endpoint
@@ -88,6 +111,7 @@ def users():
 
   for user in user_list:
     users.append({ 
+      'id': user.id,
       'uid': user.uid,
       'provider': user.provider,
       'username': user.username,
@@ -98,3 +122,5 @@ def users():
   return jsonify({'users' : users})
 
 # jsonify: https://stackoverflow.com/questions/13081532/return-json-response-from-flask-view
+
+# delete-route: https://medium.com/python-pandemonium/build-simple-restful-api-with-python-and-flask-part-2-724ebf04d12

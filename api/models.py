@@ -9,7 +9,7 @@ class Image(db.Model):
   translated_text = db.Column(db.Integer, nullable=False)
   favorite = db.Column(db.Boolean, default=False)
   language = db.Column(db.String, nullable=False)
-  user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+  user_id = db.Column(db.String, db.ForeignKey('user.id'), nullable=False)
 
 class User(db.Model):
   id = db.Column(db.Integer, primary_key=True)
