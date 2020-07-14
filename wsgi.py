@@ -1,2 +1,2 @@
-from catalog import getApp
-app = getApp()
+from Capstone-Flask-Backend import create_app
+app = create_app()
