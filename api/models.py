@@ -6,7 +6,7 @@ class Image(db.Model):
   image_url = db.Column(db.String)
   text = db.Column(db.String, nullable=False)
   # text = db.Column(db.String, unique=True, nullable=False)
-  translated_text = db.Column(db.Integer, nullable=False)
+  translated_text = db.Column(db.String, nullable=False)
   favorite = db.Column(db.Boolean, default=False)
   language = db.Column(db.String, nullable=False)
   user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
