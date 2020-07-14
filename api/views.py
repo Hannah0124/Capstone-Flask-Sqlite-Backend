@@ -33,7 +33,7 @@ def add_image():
 
 
 # endpoint
-@main.route('/images')
+@main.route('/images/', methods=['GET'])
 
 def images():
   image_list = Image.query.all()
