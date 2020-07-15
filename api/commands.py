@@ -31,3 +31,14 @@ def create_images():
 
   db.session.add_all([one, two, three, four, five])
   db.session.commit()
+
+
+@click.command(name='delete_database')
+@with_appcontext
+def delete_database():
+  user_list = User.query.all()
+  image_list = Image.query.all()
+
+  db.session.delete(user_list)
+  db.session.delete(image_list)
+  db.session.commit()
