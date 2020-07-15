@@ -16,7 +16,7 @@ def create_app():
 
   app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
   app.config['SECRET_KEY'] = 'sdflkjweiofjwefijsldkjflsdfjk' 
-  app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://lvwbjxtmssmblc:4e742b0d00d6535331089cb52d42ef34118516fe398660b45167fd96a2b66ac7@ec2-52-70-15-120.compute-1.amazonaws.com:5432/d874b4ihi94mvj'  
+  app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://jljnpbloyqfwvn:813f849eaa918b21b8bd9c76e8be1bc01bb6c98b2605617fea25be3371965d74@ec2-34-239-241-25.compute-1.amazonaws.com:5432/d3are692suf1kb'  
   # 'sqlite:///database.db'
   app.config['JWT_ACCESS_LIFESPAN'] = {'minutes' : 1}
 
