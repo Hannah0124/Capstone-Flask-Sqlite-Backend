@@ -24,9 +24,9 @@ def create_users():
 @with_appcontext
 def create_images():
   one = Image(favorite=True, image_url="https://images.unsplash.com/photo-1592168865720-df6eec2632d9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60", language='Chinese', text="you are beautiful", translated_text="你是美麗的", user_id=1)
-  two = Image(favorite=True, image_url="https://images.unsplash.com/photo-1489824904134-891ab64532f1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60", language='Korean', text="car", translated_text="자동차", user_id=4)
+  two = Image(favorite=True, image_url="https://images.unsplash.com/photo-1489824904134-891ab64532f1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60", language='Korean', text="car", translated_text="자동차", user_id=3)
   three = Image(favorite=True, image_url="https://images.unsplash.com/photo-1548266652-99cf27701ced?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60", language='Spanish', text="sky", translated_text="cielo", user_id=1)
-  four = Image(favorite=True, image_url="https://images.unsplash.com/photo-1589656966895-2f33e7653819?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60", language='Korean', text="bear", translated_text="곰", user_id=4)
+  four = Image(favorite=True, image_url="https://images.unsplash.com/photo-1589656966895-2f33e7653819?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60", language='Korean', text="bear", translated_text="곰", user_id=3)
   five = Image(favorite=True, image_url="https://images.unsplash.com/photo-1563746870516-07dc33b40b92?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60", language='Korean', text="cactus", translated_text="선인장", user_id=1)
 
   db.session.add_all([one, two, three, four, five])
