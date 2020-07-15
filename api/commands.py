@@ -36,12 +36,4 @@ def create_images():
 @click.command(name='delete_database')
 @with_appcontext
 def delete_database():
-  user_list = User.query.all()
-  image_list = Image.query.all()
-
-  db.session.delete(user_list)
-  db.session.commit()
-
-  db.session.delete(image_list)
-  db.session.commit()
-  
+  db.session.drop_all()
