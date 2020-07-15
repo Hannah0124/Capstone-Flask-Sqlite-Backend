@@ -16,7 +16,7 @@ def create_app():
   # print(app.config)
 
   app.config['SECRET_KEY'] = 'sdflkjweiofjwefijsldkjflsdfjk' #environ.get('SECRET_KEY')
-  app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db' #  
+  app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://cfqmgmmnoalper:615ad5c42bb6a7fe4e936fe5c784f8e7fb513063138263f7e55a1bf474533d14@ec2-18-233-32-61.compute-1.amazonaws.com:5432/dft363olok86e3'  # 'sqlite:///database.db' 
   app.config['JWT_ACCESS_LIFESPAN'] = {'minutes' : 1}
 
   # They way below is not working (TODO)
@@ -37,6 +37,3 @@ def create_app():
   app.register_blueprint(main)
 
   return app
-
-def getApp():
-    return app
