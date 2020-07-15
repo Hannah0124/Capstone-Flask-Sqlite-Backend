@@ -13,7 +13,7 @@ class Image(db.Model):
 
 class User(db.Model):
   id = db.Column(db.Integer, primary_key=True)
-  uid = db.Column(db.Numeric(21, 0), unique=True, nullable=False)
+  uid = db.Column(db.String, unique=True, nullable=False)
   provider = db.Column(db.String)
   username = db.Column(db.String, unique=True, nullable=False)
   password = db.Column(db.Text)
