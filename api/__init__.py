@@ -14,9 +14,6 @@ def create_app():
 
   # print(app.config)
 
-  print("!!")
-  print(os.environ.get('SECRET_KEY'))
-  print(os.environ.get('SQLALCHEMY_DATABASE_URI'))
 
   app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
   app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
