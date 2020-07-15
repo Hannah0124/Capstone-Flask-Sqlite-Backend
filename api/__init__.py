@@ -2,6 +2,8 @@ from flask import Flask
 from os import environ
 from flask_sqlalchemy import SQLAlchemy
 
+import os
+
 from .commands import create_users, create_images, create_database
 from .extensions import db, guard
 from .models import User
