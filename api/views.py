@@ -49,7 +49,7 @@ def images():
       'favorite': image.favorite,
       'language': image.language,
       'user_id': image.user_id,
-      'original_lang': original_lang
+      'original_lang': image.original_lang
     })
 
   return jsonify({'images' : images})
