@@ -70,8 +70,18 @@ def get_image(id):
   #   'user_id': image.user_id,
   #   'original_lang': original_lang
   # })
+  response = {
+    'id': image.id,
+    'image_url': image.image_url, 
+    'text': image.text, 
+    'translated_text': image.translated_text,
+    'favorite': image.favorite,
+    'language': image.language,
+    'user_id': image.user_id,
+    'original_lang': original_lang
+  }
 
-  return jsonify({'image' : image})
+  return jsonify(response), 201 
 
 # endpoint
 @main.route('/image/<id>', methods=['POST'])
