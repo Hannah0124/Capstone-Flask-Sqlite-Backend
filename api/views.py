@@ -47,12 +47,30 @@ def images():
       'translated_text': image.translated_text,
       'favorite': image.favorite,
       'language': image.language,
-      'user_id': image.user_id 
+      'user_id': image.user_id,
+      'original_lang': original_lang
     })
 
   return jsonify({'images' : images})
 
+# endpoint to get individual image
+@main.route('/image/<id>', methods=['GET'])
+def get_image(id):
 
+  image = Image.query.get(id)
+  
+  image.append({
+    'id': image.id,
+    'image_url': image.image_url, 
+    'text': image.text, 
+    'translated_text': image.translated_text,
+    'favorite': image.favorite,
+    'language': image.language,
+    'user_id': image.user_id,
+    'original_lang': original_lang
+  })
+
+  return jsonify({'image' : image})
 
 # endpoint
 @main.route('/image/<id>', methods=['POST'])
