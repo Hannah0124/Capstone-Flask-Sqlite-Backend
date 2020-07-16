@@ -17,6 +17,7 @@ def add_image():
     image_url=image_data['image_url'], 
     text=image_data['text'], 
     translated_text=image_data['translated_text'], favorite=image_data['favorite'],
+    original_lang=image_data['original_lang'],
     language=image_data['language'],
     user_id=image_data['user_id']
   )
@@ -46,6 +47,7 @@ def images():
       'text': image.text, 
       'translated_text': image.translated_text,
       'favorite': image.favorite,
+      'original_lang': image.original_lang,
       'language': image.language,
       'user_id': image.user_id 
     })
