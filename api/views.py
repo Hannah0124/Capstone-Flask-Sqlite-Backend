@@ -18,7 +18,8 @@ def add_image():
     text=image_data['text'], 
     translated_text=image_data['translated_text'], favorite=image_data['favorite'],
     language=image_data['language'],
-    user_id=image_data['user_id']
+    user_id=image_data['user_id'],
+    original_lang=image_data['original_lang']
   )
   
   db.session.add(new_image)
