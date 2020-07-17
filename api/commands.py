@@ -12,7 +12,7 @@ def create_database():
 @click.command(name='create_users')
 @with_appcontext
 def create_users():
-  one = User(uid="123", provider="Google", username='One', password=guard.hash_password('one'))
+  one = User(uid="321", provider="Google", username='One', password=guard.hash_password('one'))
   two = User(uid="456", provider="Google", username='Two', password=guard.hash_password('two'))
   three = User(uid="789", provider="Google", username='Three', password=guard.hash_password('three'))
 
