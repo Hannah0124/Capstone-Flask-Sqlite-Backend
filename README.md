@@ -1,5 +1,7 @@
 # Capstone-Flask-Sqlite-Backend
 
+Our Capstone project (Vizlator) is a Python + Flask + PostgreSQL API used with React Native App Frontend to save users profile & images.
+
 ## Routes
 
 - **Retrieve all Users**
