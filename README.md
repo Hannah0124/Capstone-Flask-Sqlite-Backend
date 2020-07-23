@@ -2,7 +2,7 @@
 
 Our Capstone project (Vizlator) is a Python + Flask + PostgreSQL API used with React Native App Frontend to save users profile & images.
 
-This API is deployed to [Heroku](https://vizlator.herokuapp.com)
+This API is deployed to [Heroku](https://vizlator.herokuapp.com/images)
 
 ## Routes
 
