@@ -45,7 +45,7 @@ numpy==1.8.0rc1
 pathlib2==2.3.5
 Pillow==6.2.2
 pipenv==2020.6.2
-protobuf==3.12.2
+protobuf==3.18.3
 py2app==0.7.3
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
